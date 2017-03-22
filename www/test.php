@@ -9,3 +9,5 @@
 	echo "Please come to school";
 
 ?>
+
+<hr>
