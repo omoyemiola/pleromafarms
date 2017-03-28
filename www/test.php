@@ -1,5 +1,5 @@
 <?php
-
+/*
 	define('DBNAME', 'pleroma');
 	define('DBUSER', 'root');
 	define('DBPASS', 'root');	
@@ -17,8 +17,18 @@ try{
 } catch(PDOException $e){
 
 	echo $e->getMessage();
-}
+}*/
 
 	
 
 ?>
+
+<form id="register" method="POST" enctype="multipart/form-data">
+
+	<p>Please Upload a file</p>
+	<input type="file" name="pic">
+	<input type="submit" name="save">
+	
+
+
+</form>
