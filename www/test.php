@@ -20,6 +20,10 @@ try{
 }*/
 	#max file size...
 	define("MAX_FILE_SIZE", "2097152");
+
+	#allowed extension...
+
+	$ext = ["image/jpg","image/jpeg","image/png"];
 	
 	if(array_key_exists("save",$_POST)) {
 
