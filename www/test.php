@@ -2,9 +2,23 @@
 
 	define('DBNAME', 'pleroma');
 	define('DBUSER', 'root');
-	define('DBPASS', 'root');
+	define('DBPASS', 'root');	
 	
-	$pdo=new PDO ("mysql:host=localhost;dbname=".DBNAME,DBUSER,DBPASS);
-	#$pdo=new PDO ("mysql:host=localhost;dbname=pleroma","root","root");
+	
+try{
+	#prepare a pdo instance
+
+	$pdo = new PDO ("mysql:host=localhost;dbname=".DBNAME,DBUSER,DBPASS);
+
+
+	#set verbose error modes
+	$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_SILENT);
+
+} catch(PDOException $e){
+
+	echo $e->getMessage();
+}
+
+	
 
 ?>
