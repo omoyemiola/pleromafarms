@@ -1,5 +1,10 @@
 <?php
 
+	#title
+	
+	$page_title = "Login";
+	
+	#include header
 	include 'includes/header.php';
 
 ?>
