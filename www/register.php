@@ -19,6 +19,38 @@
 			$errors[] = "please enter your firstname";
 		}
 
+		
+
+
+		#validate last name
+
+		if (empty ($_POST['lname'])){
+
+			$errors[] = "please enter your lastname";
+		}
+
+		#validate email name
+
+		if (empty ($_POST['email'])){
+
+			$errors[] = "please enter your email";
+		}
+
+		#validate password name
+
+		if (empty ($_POST['password'])){
+
+			$errors[] = "Password Incorrect. Please enter your password";
+		}
+
+		#validate first name
+
+		if (empty ($_POST['pword'])){
+
+			$errors[] = "please confirm your password";
+		}
+
+
 		if (empty($errors)){
 
 			//do database stuff 
@@ -26,7 +58,7 @@
 
 			foreach ($errors as $err) {
 				
-				echo $err;
+				echo $err.'</br>';
 			}
 		}
 
