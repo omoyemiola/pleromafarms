@@ -1,16 +1,9 @@
-	<!DOCTYPE html>
-<html>
-<head>
-	<title>Register</title>
-	<link rel="stylesheet" type="text/css" href="styles/styles.css">
-</head>
-<body>
-	<section>
-		<div class="mast">
-			<h1>T<span>SSB</span></h1>
-		</div>
-	</section>
-	
+<?php
+	#include header 
+	include 'includes/header.php';
+
+
+?>	
 	<div class="wrapper">
 		<h1 id="register-label">Admin Register</h1>
 		<hr>
@@ -40,14 +33,17 @@
 			<input type="submit" name="register" value="register">
 		</form>
 
-		</div>
-	<!--	<h4 class="jumpto">Don't have an account? <a href="register.php">register</a></h4>
+		<h4 class="jumpto">Have an account with us ?<a href="login.php"> Login</a></h4>
 	
 
-	<section class="foot">
-		<div>
-			<p>&copy; 2016</p>
 		</div>
-	</section> -->
-</body>
-</html>
+
+<?php 
+
+#include footer
+
+include 'includes/footer.php';
+
+?>
+
+	
