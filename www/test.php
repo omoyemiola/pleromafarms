@@ -29,6 +29,7 @@ try{
 
 		$errors= [];
 
+
 	
 
 		#be sure a file was selected ...
@@ -44,6 +45,29 @@ try{
 			$errors[] = "file size exceeds maximum.maximum: ".MAX_FILE_SIZE; 
 		}
 
+		#check extension...
+
+		if(!in_array($_FILES['pic']['type'] ,$ext)){
+
+			$errors[] = "invalid file type";
+		}
+
+		#generate random number to append
+
+		$rnd = rand (0000,9999);
+
+		#strip filename for spaces
+
+		$strip_name = str_replace(" ", "_", $_FILES['pic']['name'] );
+
+		$filename = $rnd.$strip_name;
+		$destination = 'uploads/'.$filename;
+
+		if(!move_uploaded_file($_FILES['pic']['tmp_name'], $destination)){
+
+			$errors[] = "file upload failed";
+		}
+
 		if(empty($errors)){
 
 			echo "done";
@@ -53,7 +77,6 @@ try{
 				echo $err. '</br>';
 			}
 		}
-		//print_r($_FILES);
 	}
 
 	
