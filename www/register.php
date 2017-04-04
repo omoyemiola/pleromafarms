@@ -16,7 +16,7 @@
 
 		if (empty ($_POST['fname'])){
 
-			$errors[] = "please enter your firstname";
+			$errors['fname'] = "please enter your firstname";
 		}
 
 		
@@ -26,28 +26,28 @@
 
 		if (empty ($_POST['lname'])){
 
-			$errors[] = "please enter your lastname";
+			$errors['lname'] = "please enter your lastname";
 		}
 
 		#validate email name
 
 		if (empty ($_POST['email'])){
 
-			$errors[] = "please enter your email";
+			$errors['email'] = "please enter your email";
 		}
 
 		#validate password name
 
 		if (empty ($_POST['password'])){
 
-			$errors[] = "Password Incorrect. Please enter your password";
+			$errors['password'] = "Password Incorrect. Please enter your password";
 		}
 
 		#validate first name
 
-		if (empty ($_POST['pword'])){
+		if(empty($_POST['password']!=$_POST['pword'])){
 
-			$errors[] = "please confirm your password";
+			$errors['pword'] = "passwords do not match";
 		}
 
 
@@ -70,24 +70,49 @@
 		<hr>
 		<form id="register"  action ="register.php" method ="POST">
 			<div>
+				<?php 
+
+					if(isset($errors['fname'])){echo '<span class="err">' .$errors['fname']. '</span>';}
+
+				?>
 				<label>First name:</label>
 				<input type="text" name="fname" placeholder="last name">
 			</div>
 			<div>
+				<?php 
+
+					if(isset($errors['lname'])){echo '<span class="err">' .$errors['lname']. '</span>';}
+
+				?>
 				<label>Last name:</label>
 				<input type="text" name="lname" placeholder="last name">
 			</div>
 			<div>
+			<?php 
+
+					if(isset($errors['email'])){echo '<span class="err">' .$errors['email']. '</span>';}
+
+				?>
 				<label>email:</label>
 				<input type="text" name="email" placeholder="email">
 			</div>
 			<div>
+			<?php 
+
+					if(isset($errors['password'])){echo '<span class="err">' .$errors['password']. '</span>';}
+
+				?>
 				<label>password:</label>
 				<input type="password" name="password" placeholder="password">
 			</div>
 			<div>
+			<?php 
+
+					if(isset($errors['pword'])){echo '<span class="err">' .$errors['pword']. '</span>';}
+
+				?>
 				<label>Confirm Password:</label>
-				<input type="password" name="password" placeholder="password">
+				<input type="password" name="pword" placeholder="password">
 			</div>
 
 
