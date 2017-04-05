@@ -9,7 +9,7 @@
 
 		$stmt = $dbconn ->prepare("	INSERT INTO admin(firstname,lastname,email_address,hash) VALUES(:fn,:ln,:e,:h) ");
 
-	}
+	
 
 	#bind params
 
@@ -21,5 +21,6 @@
 	  	];
 
 	  		$stmt->execute($data);
+	  	}
 
 ?>
