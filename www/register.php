@@ -7,7 +7,12 @@
 
 	include 'includes/db.php';
 
+	#load functions.
+
+	include 'includes/functions.php';
+
 	#include header 
+	
 	include 'includes/header.php';
 
 	if(array_key_exists('register', $_POST)){
@@ -63,7 +68,11 @@
 
 			$clean = array_map('trim', $_POST);
 
-			#hash the password
+
+			#register admin
+			doAdminRegister($conn,$clean);
+
+		/*	#hash the password
 
 			$hash = password_hash($clean['password'], PASSWORD_BCRYPT);
 
@@ -82,7 +91,7 @@
 
 				];
 
-				$stmt -> execute($data);
+				$stmt -> execute($data); */
 		} 
 
 	}
