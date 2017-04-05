@@ -45,6 +45,11 @@
 			$errors['email'] = "please enter your email";
 		}
 
+		if (doesEmailExist($conn,$_POST['email'])) {
+
+			$errors ['email'] = "email already exists";
+		}
+
 		#validate password name
 
 		if (empty ($_POST['password'])){
