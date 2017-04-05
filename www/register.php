@@ -49,10 +49,10 @@
 
 		#validate first name
 
-		if(empty($_POST['password']!=$_POST['pword'])){
+	/*	if(empty($_POST['password']!=$_POST['pword'])){
 
 			$errors['pword'] = "passwords do not match";
-		}
+		}*/
 
 
 		if (empty($errors)){
@@ -99,7 +99,7 @@
 
 				?>
 				<label>First name:</label>
-				<input type="text" name="fname" placeholder="last name">
+				<input type="text" name="fname" placeholder="first name">
 			</div>
 			<div>
 				<?php 
@@ -128,15 +128,15 @@
 				<label>password:</label>
 				<input type="password" name="password" placeholder="password">
 			</div>
-			<div>
+		<!--	<div> commented out because of insert into database. to make relevant , we have to insert confirm password into db as well.
 			<?php 
 
-					if(isset($errors['pword'])){echo '<span class="err">' .$errors['pword']. '</span>';}
+					/*if(isset($errors['pword'])){echo '<span class="err">' .$errors['pword']. '</span>';}*/
 
 				?>
 				<label>Confirm Password:</label>
 				<input type="password" name="pword" placeholder="password">
-			</div>
+			</div> -->
 
 
 			<input type="submit" name="register" value="register">
